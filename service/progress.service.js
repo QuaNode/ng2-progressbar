@@ -97,7 +97,7 @@ export var NgProgressService = (function () {
     };
     /** Update Progressbar State */
     NgProgressService.prototype.updateState = function (progress, active) {
-        this.state.next({
+        if (!this.state.closed) this.state.next({
             value: progress,
             active: active
         });
