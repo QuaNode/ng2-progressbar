@@ -63,6 +63,7 @@ export var ProgressComponent = (function () {
         }
     };
     ProgressComponent.prototype.ngOnDestroy = function () {
+        this.progress.done();
         this.progress.state.unsubscribe();
         this.progress.trickling.unsubscribe();
     };
